@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "src/index.ts",
   "scripts": {
-    "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
-    "dev:esm": "ts-node --loader ts-node/esm src/index.ts"
+    "build": "tsc",
+    "start": "node build/index.js"
   },
   "dependencies": {
     "@prisma/client": "^5.22.0",
