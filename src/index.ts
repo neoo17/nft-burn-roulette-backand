@@ -17,7 +17,7 @@ const io = new Server(server, {
 
 initGameController(io);
 
-const port = process.env.PORT || 4000;
+const port = parseInt(process.env.PORT || "4000", 10);
 server.listen(port, '0.0.0.0', () => {
     console.log(`Backend running on port ${port}`);
 });
