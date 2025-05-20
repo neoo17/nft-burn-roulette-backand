@@ -103,8 +103,8 @@ export function initGameController(io: Server) {
             user.inGame = true;
             creator.inGame = true;
             const room = `room_${game.id}`;
-            const deck = Array(5).fill("safe") as ("safe" | "burn")[];
-            deck.splice(Math.floor(Math.random() * 6), 0, "burn");
+            const deck = Array(6).fill("safe") as ("safe" | "burn")[];
+            deck[Math.floor(Math.random() * 6)] = "burn";
             const sockets: [Socket, Socket] = [creator.socket, user.socket];
             const players: [string, string] = [creator.name, user.name];
             const gameRoom: GameRoom = {
